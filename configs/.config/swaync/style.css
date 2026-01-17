@@ -1,0 +1,164 @@
+:root {
+    --bg-selected: rgba(110, 119, 128, 0.3);
+}
+
+* {
+  font-size: 14px;
+  font-family: "Noto Sans";
+  transition: 100ms;
+  box-shadow: unset;
+}
+
+.notification-row .notification-background .notification {
+  outline: none;
+  border-radius: 15px;
+  margin: 1px;
+  background-color: rgba(28, 28, 34, 0.3);
+}
+
+
+.control-center {
+  border-radius: 1.7rem;
+  margin: 7px;
+  background-color: rgba(28, 28, 34, 0.2);
+  padding: 1rem;
+}
+
+.control-center trough {
+  border-radius: 9999px;
+  min-width: 0.545rem;
+  background-color: rgba(28, 28, 34, 0.4);
+}
+
+.control-center slider {
+  border-radius: 9999px;
+  /* make the slider thumb a bit larger for better touch/visibility */
+  min-width: 0.5rem;
+  min-height: 1.8rem;
+}
+
+/* Target the volume widget icon specifically */
+.widget-volume>box>label {
+  font-size: 24px;
+  /* Adjust this value to match your backlight icon */
+}
+
+/* Alternative: If using a modern version where icons are images */
+.widget-volume image {
+  -gtk-icon-size: 24px;
+  /* Adjust size here */
+}
+
+/* Ensure the backlight widget icon is consistent */
+.widget-backlight>box>label,
+.widget-backlight image {
+  font-size: 24px;
+  -gtk-icon-size: 24px;
+}
+
+
+/* title widget */
+
+.widget-title {
+  padding: 0.341rem;
+  margin: unset;
+}
+
+.widget-title label {
+  font-family: 'Gabarito', 'Lexend', sans-serif;
+  font-size: 1.364rem;
+  color: #e4e1e6;
+  margin-left: 0.941rem;
+}
+
+.widget-title button {
+  border: unset;
+  background-color: unset;
+  border-radius: 1.159rem;
+  padding: 0.141rem 0.141rem;
+  margin-right: 0.841rem;
+}
+
+.widget-title button label {
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1.0409rem;
+  color: #e4e1e6;
+  margin-right: 0.841rem;
+}
+
+.widget-title button:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+.widget-title button:active {
+  background-color: rgba(128, 128, 128, 0.7);
+}
+
+/* Buttons widget */
+.widget-buttons-grid {
+  border-radius: 1.159rem;
+  padding: 0.341rem;
+  background-color: rgba(28, 28, 34, 0.35);
+  padding: unset;
+}
+
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  border: none;
+  background-color: unset;
+  border-radius: 9999px;
+  /* reduced size so more buttons fit per row */
+  min-width: 4.2rem;
+  min-height: 2.6rem;
+  padding: 0.15rem;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button label {
+  font-family: "Materials Symbol Rounded";
+  font-size: 1.4rem;
+  color: #e4e1e6;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  /* OnePlus McClaren edition Orange accent */
+  background-color: #39469b;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked label {
+  color: #14141B;
+}
+
+
+/* Style the entire MPRIS container */
+.widget-mpris {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Style the title and subtitle text */
+.widget-mpris-title {
+  font-size: 14px;
+  font-weight: regular;
+  color: #cad3f5;
+}
+
+.widget-mpris-subtitle {
+  font-size: 14px;
+  color: #a5adcb;
+}
+
+/* Style the control buttons (play/pause/next) */
+.widget-mpris button {
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #84bcd6;
+}

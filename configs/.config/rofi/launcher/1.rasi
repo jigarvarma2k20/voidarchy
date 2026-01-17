@@ -1,0 +1,135 @@
+/**
+ Voidarchy 
+**/
+
+/***** Global Properties *****/
+* {
+    background:     #0a122270;
+    background-alt: #101a2e70;
+    foreground:     #c5cdd980;
+    selected:       #61afef50;
+    accent:         #4a556bFF;
+    
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+/***** Configuration *****/
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+    drun-display-format:        "{name}";
+}
+
+/***** Main Window *****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+
+    enabled:                     true;
+    border:                      1px solid;
+    border-radius:               12px;
+    border-color:                @accent;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+/***** Main Box *****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/***** Inputbar *****/
+inputbar {
+    enabled:                     true;
+    margin:                      0px;
+    spacing:                     15px;
+    padding:                     15px 20px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    border-radius:               12px 12px 0px 0px; 
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    padding:                     0px 5px 0px 0px;
+    text-color:                  @accent; /* Muted prompt icon */
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           @accent;
+}
+
+/***** Listview *****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       9;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    fixed-height:                false;
+    
+    spacing:                     5px;       
+    margin:                      10px;
+    background-color:            transparent;
+}
+
+/***** Elements *****/
+element {
+    enabled:                     true;
+    spacing:                     15px;
+    padding:                     8px 12px;
+    border-radius:               8px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @selected; /* Subtle highlight */
+    text-color:                  #ffffff;   /* Pure white only on selection */
+}
+
+element-icon {
+    background-color:            transparent;
+    size:                        24px;
+    alpha:                       0.7; /* Dimmed icons for lower contrast */
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+}
+
+/***** Message *****/
+error-message {
+    padding:                     20px;
+    border:                      1px solid;
+    border-color:                @accent;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
