@@ -40,6 +40,11 @@ echo ""
 echo "== Copying dotfiles... =="
 cp -r "$(pwd)/configs/." ~
 
+echo ""
+chmod +x scripts/*.sh
+echo "== Setting up wallpaper... =="
+bash scripts/setup-wallpapers.sh
+
 echo "== Starting services... =="
 systemctl --user enable --now pipewire wireplumber
 sudo systemctl enable --now bluetooth
