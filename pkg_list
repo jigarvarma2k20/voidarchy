@@ -20,3 +20,6 @@ playerctl
 brightnessctl
 hyprlock
 hyprpaper
+bluez
+bluez-utils
+blueman
