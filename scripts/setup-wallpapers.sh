@@ -11,16 +11,16 @@ read -r -p "[Y/n]: " choice
 choice=${choice:-Y}
 
 # create file if missing
-[ -f "$WAYPAPER_CONF" ] || echo -e "[Settings]\nbackend = hyprpaper" > "$WAYPAPER_CONF"
+[ -f "$WAYPAPER_CONF" ] || echo -e "[Settings]\nbackend = swww" > "$WAYPAPER_CONF"
 
 # ensure [Settings] exists
 grep -q "^\[Settings\]" "$WAYPAPER_CONF" || echo "[Settings]" | tee -a "$WAYPAPER_CONF" >/dev/null
 
 # replace backend if exists, otherwise append
 if grep -q "^backend\s*=" "$WAYPAPER_CONF"; then
-  sed -i 's/^backend\s*=.*/backend = hyprpaper/' "$WAYPAPER_CONF"
+  sed -i 's/^backend\s*=.*/backend = swww/' "$WAYPAPER_CONF"
 else
-  sed -i '/^\[Settings\]/a backend = hyprpaper' "$WAYPAPER_CONF"
+  sed -i '/^\[Settings\]/a backend = swww' "$WAYPAPER_CONF"
 fi
 
 
