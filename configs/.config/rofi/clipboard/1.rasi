@@ -1,0 +1,89 @@
+configuration {
+    show-icons: true;
+    display-dmenu: "󰅇";
+    dmenu-display-format:        "{name}";
+}
+
+
+* {
+    font: "JetBrainsMono Nerd Font 11";
+
+    accent:    #7dcfff;
+    border:    #1f2942;
+
+    background-color: transparent;
+    text-color: rgba(200, 211, 245, 0.85);
+}
+
+window {
+    transparency: "real";
+    background-color: rgba(10, 13, 24, 0.50);
+    border: 2px;
+    border-color: @border;
+    border-radius: 16px;
+    padding: 14px;
+    width: 35%;
+}
+
+mainbox {
+    background-color: transparent;
+    spacing: 10px;
+}
+
+inputbar {
+    background-color: rgba(15, 20, 36, 0.70);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+prompt {
+    enabled: true;
+    font-size: 18;
+    padding: 0px 8px 0px 0px;
+    text-color: white;
+}
+
+entry {
+    placeholder: "clipboard history…";
+    placeholder-color: rgba(154, 165, 206, 0.65);
+}
+
+listview {
+    background-color: transparent;
+    lines: 10;
+    spacing: 6px;
+    scrollbar: false;
+}
+
+element {
+    padding: 10px;
+    border-radius: 12px;
+}
+
+element normal.normal {
+    background-color: rgba(14, 18, 32, 0.45);
+    text-color: rgba(200, 211, 245, 0.85);
+}
+
+element alternate.normal {
+    background-color: rgba(11, 15, 26, 0.40);
+    text-color: rgba(154, 165, 206, 0.65);
+}
+
+element selected.normal {
+    background-color: rgba(27, 34, 56, 0.85);
+    text-color: rgba(125, 207, 255, 1.00);
+}
+
+element-text {
+    highlight: bold;
+    vertical-align: 0.5;
+}
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+    text-color: rgba(154, 165, 206, 0.65);
+}
