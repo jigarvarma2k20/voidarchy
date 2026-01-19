@@ -2,8 +2,11 @@ rofi
 waybar
 swaync
 hyprland
+hyprlock
+hypridle
 kitty
 cliphist
+wl-clipboard
 pipewire
 pipewire-audio
 pipewire-pulse
@@ -18,9 +21,11 @@ starship
 power-profiles-daemon
 playerctl
 brightnessctl
-hyprlock
 swww
 bluez
+bluez-tools
 bluez-utils
 blueman
 nwg-displays
+grim
+slurp

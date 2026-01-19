@@ -2,49 +2,32 @@
 
 WALL_DIR="$HOME/Pictures/wallpapers"
 REPO_URL="https://github.com/whoisYoges/lwalpapers.git"
-WAYPAPER_CONF="$HOME/.config/waypaper/config.ini"
+DEFAULT_WALL="$XDG_CONFIG_HOME/voidarchy/wall.jpg"
 
-mkdir -p "$(dirname "$WAYPAPER_CONF")"
+echo "== Wallpaper Setup =="
 
-echo "Do you want to download wallpapers? (default: Y)"
-read -r -p "[Y/n]: " choice
+read -r -p "Download wallpapers? [Y/n] (default: Y): " choice </dev/tty
 choice=${choice:-Y}
-
-# create file if missing
-[ -f "$WAYPAPER_CONF" ] || echo -e "[Settings]\nbackend = swww" > "$WAYPAPER_CONF"
-
-# ensure [Settings] exists
-grep -q "^\[Settings\]" "$WAYPAPER_CONF" || echo "[Settings]" | tee -a "$WAYPAPER_CONF" >/dev/null
-
-# replace backend if exists, otherwise append
-if grep -q "^backend\s*=" "$WAYPAPER_CONF"; then
-  sed -i 's/^backend\s*=.*/backend = swww/' "$WAYPAPER_CONF"
-else
-  sed -i '/^\[Settings\]/a backend = swww' "$WAYPAPER_CONF"
-fi
-
 
 case "$choice" in
   y|Y|yes|YES)
+    echo "== Selected: Y =="
     if [ -d "$WALL_DIR" ] && [ "$(ls -A "$WALL_DIR")" ]; then
-      echo "Wallpaper folder already exists. Skipping download."
+      echo "== Wallpapers already exist =="
     else
-      echo "Downloading wallpapers ..."
+      echo "== Downloading wallpapers =="
+      echo "== Thanks to whoisYoges for the wallpaper collection =="
       mkdir -p "$WALL_DIR"
       git clone --depth=1 "$REPO_URL" "$WALL_DIR"
       rm -rf "$WALL_DIR/.git"
-      echo "Wallpapers installed in $WALL_DIR"
     fi
+
+    echo "== Setting random wallpaper =="
+    waypaper --random --folder "$WALL_DIR"
     ;;
   *)
-    echo "Skipped wallpaper download."
+    echo "== Selected: N =="
+    echo "== Using default wallpaper =="
+    waypaper --wallpaper "$DEFAULT_WALL"
     ;;
 esac
-
-
-if command -v waypaper &>/dev/null; then
-  echo "Setting a random wallpaper ..."
-  waypaper --random --folder "$WALL_DIR"
-else
-  echo "waypaper is not installed. Please install it to set wallpapers."
-fi
