@@ -10,14 +10,13 @@ AUR_LIST="$PARENT_DIR/aur_list"
 YAY_DIR="/tmp/yay"
 
 print_block() {
-  echo
   echo "== $1 =="
 }
 
 install_pacman() {
   if [ -s "$PKG_LIST" ]; then
     print_block "INSTALLING OFFICIAL PACKAGES"
-    sudo pacman -S --needed --noconfirm - < "$PKG_LIST"
+    sudo pacman -Sdd --needed --noconfirm - < "$PKG_LIST"
   else
     echo "== SKIP == pkg_list missing or empty"
   fi
@@ -40,7 +39,7 @@ install_aur() {
   if [ -s "$AUR_LIST" ]; then
     print_block "INSTALLING AUR PACKAGES"
     install_yay
-    yay -S --needed --noconfirm - < "$AUR_LIST"
+    yay -Sdd --needed --noconfirm - < "$AUR_LIST"
   else
     echo "== SKIP == aur_list missing or empty"
   fi

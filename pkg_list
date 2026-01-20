@@ -8,7 +8,6 @@ kitty
 cliphist
 wl-clipboard
 pipewire
-pipewire-audio
 pipewire-pulse
 wireplumber
 pavucontrol
@@ -29,3 +28,5 @@ blueman
 nwg-displays
 grim
 slurp
+networkmanager
+network-manager-applet

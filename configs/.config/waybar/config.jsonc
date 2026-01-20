@@ -47,7 +47,7 @@
 
   "power-profiles-daemon": {
     "format": "{icon} ",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip-format": "Power profile: {profile} {icon}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
       "default": "",
@@ -57,7 +57,7 @@
     }
   },
   "clock#time": {
-    "format": "  {:%H:%M:%S}",
+    "format": "  {:%I:%M:%S %p}",
     "format-alt": "  {:%a, %d %b}",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
@@ -104,22 +104,15 @@
     ],
     //"thermal-zone": 0,
     "critical-threshold": 82,
-    "format-critical": "{temperatureC}°C {icon}",
-    "format": "{icon} {temperatureC}°C",
-    "format-icons": ["󰈸"],
+    "format-critical": "󰈸 {temperatureC}°C",
+    "format": " {temperatureC}°C",
+    "tooltip-format": "CPU Temp: {temperatureC}°C",
     "on-click-right": "kitty -e btop"
   },
 
-  // "cpu": {
-  //   "format": "󰍛 {usage}%",
-  //   "format-alt" : "{load}",
-  //   "tooltip": false,
-  //   "interval": 5,
-  // },
   "cpu": {
     "interval": 5,
-    "format": "󰍛 {icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format": "󰍛 {usage:>2}% "
   },
   "memory": {
     "states": {
@@ -127,9 +120,9 @@
       "critical": 90
     },
 
-    "format": "  {percentage}%",
+    "format": " {percentage}%",
     "format-critical": "󰀦 {percentage}%",
-    "tooltip-format": "Memory Used: {used:0.2f} GB / {total:0.2f} GB",
+    "tooltip-format": "  Memory Used: {used:0.2f} GB / {total:0.2f} GB",
     "interval": 5
     // "min-length": 7,
     // "max-length": 7
@@ -147,11 +140,11 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "婢",
+    "format-muted": "婢 {volume}%",
     "format-icons": {
       "default": ["", "", "󰕾"]
     },
-    "tooltip-format": "{volume}% {icon} | {desc}",
+    "tooltip-format": "{icon} {volume}% | {desc}",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
@@ -159,7 +152,7 @@
     "tooltip": true
   },
   "pulseaudio#microphone": {
-    "tooltip-format": "{volume}% {format_source} | {source_desc}",
+    "tooltip-format": "{format_source} {source_volume}%  | {source_desc}",
     "format": "{format_source} {source_volume}% ",
     "format-source": "",
     "format-source-muted": "󰍭",
@@ -167,7 +160,6 @@
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%"
   },
-
   "battery#icon": {
     "interval": 60,
     "states": {

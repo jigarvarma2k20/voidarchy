@@ -1,13 +1,13 @@
 #!/bin/sh
 
 print_block() {
-  echo
   echo "== $1 =="
 }
 
 # user services to enable
 USER_SERVICES="
 pipewire
+pipewire-pulse
 wireplumber
 "
 
@@ -15,6 +15,7 @@ wireplumber
 SYSTEM_SERVICES="
 bluetooth
 NetworkManager
+wpa_supplicant
 power-profiles-daemon
 sddm
 "

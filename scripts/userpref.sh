@@ -6,12 +6,12 @@ BACKUP_DIR="$HOME/.cache/voidarchy/backups/"
 FILES="
 $XDG_CONFIG_HOME/hypr/userprefs.conf
 $XDG_CONFIG_HOME/hypr/monitors.conf
+$XDG_CONFIG_HOME/kitty/user.conf
 "
 
 ACTION="$1"
 
 print_block() {
-  echo
   echo "== $1 =="
 }
 
