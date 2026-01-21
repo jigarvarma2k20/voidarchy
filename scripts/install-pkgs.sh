@@ -16,7 +16,7 @@ print_block() {
 install_pacman() {
   if [ -s "$PKG_LIST" ]; then
     print_block "INSTALLING OFFICIAL PACKAGES"
-    sudo pacman -Sdd --needed --noconfirm - < "$PKG_LIST"
+    grep -Ev '^\s*#|^\s*$' "$PKG_LIST" | sudo pacman -Sdd --needed --noconfirm -
   else
     echo "== SKIP == pkg_list missing or empty"
   fi
@@ -39,7 +39,7 @@ install_aur() {
   if [ -s "$AUR_LIST" ]; then
     print_block "INSTALLING AUR PACKAGES"
     install_yay
-    yay -Sdd --needed --noconfirm - < "$AUR_LIST"
+    grep -Ev '^\s*#|^\s*$' "$AUR_LIST" | yay -Sdd --needed --noconfirm -
   else
     echo "== SKIP == aur_list missing or empty"
   fi

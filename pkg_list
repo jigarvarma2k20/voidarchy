@@ -1,32 +1,67 @@
-rofi
-waybar
-swaync
+# Wayland / Compositor / Display
 hyprland
-hyprlock
+swaync
+waybar
+rofi
 hypridle
+hyprlock
+
+# Terminal & Shell Enhancements
 kitty
+starship
+
+# Clipboard / Copy-Paste Tools
 cliphist
 wl-clipboard
+
+# Audio / PipeWire
 pipewire
 pipewire-pulse
 wireplumber
 pavucontrol
-xdg-desktop-portal-hyprland
-polkit-kde-agent
-ttf-jetbrains-mono
-sddm
-qt6-wayland
-starship
-power-profiles-daemon
 playerctl
+
+# Screen / Display Utilities
 brightnessctl
+grim
+slurp
+nwg-displays
 swww
+
+# Fonts
+ttf-jetbrains-mono-nerd
+
+# Login / Polkit / Desktop Agents
+sddm
+polkit-gnome
+
+# XDG / Desktop Portals
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+xdg-user-dirs
+
+# System Utilities
+power-profiles-daemon
+fastfetch
+pacman-contrib
+parallel
+jq
+imagemagick
+libnotify
+
+# Networking / Bluetooth
+networkmanager
+network-manager-applet
 bluez
 bluez-tools
 bluez-utils
 blueman
-nwg-displays
-grim
-slurp
-networkmanager
-network-manager-applet
+udiskie
+
+# File Managers / Archiving
+dolphin
+ark
+unzip
+
+# Qt / Wayland Support
+qt6-wayland
