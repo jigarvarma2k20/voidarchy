@@ -16,6 +16,7 @@
     "group/audio",
     "group/backlight-group",
     "group/battery-group",
+    "custom/keybindings",
     "custom/swaync",
     "custom/power-menu"
   ],
@@ -333,5 +334,11 @@
   },
   "custom/empty-space":{
     "format": " "
+  },
+  "custom/keybindings":{
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Launch Keybindings Help Menu\nSuper + H",
+    "on-click": "bash $XDG_CONFIG_HOME/rofi/keybindings.sh &"
   }
 }

@@ -38,7 +38,6 @@ Warning:
 This will overwrite existing configs in your home directory.
 Backup first if you care about your old setup.
 
----
 
 ## Requirements
 - Arch Linux
@@ -59,16 +58,15 @@ Fresh Arch install is recommended.
 - Helper scripts
 - Keybindings (documented inside configs)
 
----
 
 ## Keybindings
-```
-Keybindings are defined inside the Hyprland config files.
-Main modifier key is usually SUPER.
 
-Full list is not provided here since it may change often.
+Keybindings are defined inside the Hyprland config files.
+Main modifier key is usually SUPER (Windows Key).
 ```
----
+Super + H -> Open keybindings help menu
+```
+> Full list is not provided here since it may change often.
 
 ## Customization
 

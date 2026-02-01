@@ -1,0 +1,124 @@
+configuration {
+    show-icons: false;
+    display-dmenu: "KEYS";
+    dmenu-display-format: "{name}";
+}
+
+* {
+    font: "JetBrainsMono Nerd Font 11";
+
+    accent: #7dcfff;
+    border: #1f2942;
+
+    fg-main: rgba(200, 211, 245, 0.85);
+    fg-dim:  rgba(154, 165, 206, 0.65);
+
+    bg-main: rgba(10, 13, 24, 0.60);
+    bg-select: rgba(18, 12, 12, 0.27);
+
+    background-color: transparent;
+    text-color: @fg-main;
+}
+
+/* =========================
+   Window
+   ========================= */
+
+window {
+    transparency: "real";
+    background-color: @bg-main;
+    border: 2px;
+    border-color: @border;
+    border-radius: 12px;
+    width: 720px;
+    height: 80%;
+    padding: 12px;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+mainbox {
+    background-color: transparent;
+    spacing: 6px;
+}
+
+/* =========================
+   Input bar (minimal)
+   ========================= */
+
+inputbar {
+    background-color: transparent;
+    padding: 6px 8px;
+}
+
+prompt {
+    enabled: true;
+    font-size: 14;
+    text-color: @accent;
+}
+
+entry {
+    placeholder: "Search Keybindings...";
+    placeholder-color: @fg-dim;
+}
+
+
+listview {
+    padding: 6px;
+    lines: 14;
+    spacing: 0px;
+    scrollbar: true;
+}
+
+
+element {
+    padding: 6px 10px;
+    border-radius: 0px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg-main;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg-dim;
+}
+
+element selected.normal {
+    background-color: @bg-select;
+    text-color: @accent;
+}
+
+
+element-text {
+    highlight: bold;
+    vertical-align: 0.5;
+}
+
+
+element-text.heading {
+    text-color: @accent;
+}
+
+element-text.separator {
+    text-color: @border;
+}
+
+scrollbar {
+    width: 6px;
+    handle-width: 6px;
+    background-color: transparent;
+    handle-color: @border;
+}
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+    text-color: @fg-dim;
+}
