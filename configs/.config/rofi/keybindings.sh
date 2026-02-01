@@ -92,6 +92,16 @@ function print_heading(title) {
     }
   }
 
+  if (key ~ /^mouse/) {
+    if (key == "mouse:272") key = "Left Click"
+    else if (key == "mouse:273") key = "Right Click"
+    else if (key == "mouse:274") key = "Middle Click"
+    else if (key == "mouse:275") key = "Mouse Back"
+    else if (key == "mouse:276") key = "Mouse Forward"
+    else if (key == "mouse_up") key = "Mouse Scroll Up"
+    else if (key == "mouse_down") key = "Mouse Scroll Down"
+  }
+
   # expand variables
   gsub(/\$mainMod/, "SUPER", mods)
 
