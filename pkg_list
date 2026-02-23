@@ -65,3 +65,6 @@ unzip
 
 # Qt / Wayland Support
 qt6-wayland
+
+# Utility
+kate

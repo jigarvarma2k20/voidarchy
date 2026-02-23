@@ -1,5 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
+
+source ./utils.sh
 
 # resolve script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -8,10 +10,6 @@ PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 PKG_LIST="$PARENT_DIR/pkg_list"
 AUR_LIST="$PARENT_DIR/aur_list"
 YAY_DIR="/tmp/yay"
-
-print_block() {
-  echo "== $1 =="
-}
 
 install_pacman() {
   if [ -s "$PKG_LIST" ]; then
@@ -45,6 +43,12 @@ install_aur() {
   fi
 }
 
+update_mirrors() {
+  print_block "UPDATING MIRRORS"
+  sudo pacman -Sy
+}
+
 print_block "PACKAGE INSTALL START"
+update_mirrors
 install_pacman
 install_aur

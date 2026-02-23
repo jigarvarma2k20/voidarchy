@@ -1,0 +1,239 @@
+# VOIDARCHY
+
+format = """
+[╭─](#1a1f2b)\
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$docker_context\
+$cmd_duration\
+$status\
+$python\
+$nodejs\
+$golang\
+$dart\
+$java\
+$kotlin\
+$scala\
+$swift\
+$rust\
+$c\
+$cpp\
+$zig\
+$nim\
+$haskell\
+$ocaml\
+$elixir\
+$erlang\
+$php\
+$perl\
+$ruby\
+$julia\
+$crystal\
+$dotnet\
+$terraform\
+$kubernetes\
+$docker_context\
+$conda\
+$nix_shell\
+$memory_usage
+[╰─](#1a1f2b)\
+$character
+"""
+
+add_newline = true
+palette = "voidarchy"
+
+# Palette
+
+[palettes.voidarchy]
+blue = "#7aa2f7"
+cyan = "#7dcfff"
+purple = "#bb9af7"
+pink = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+gray = "#565f89"
+
+# Core
+
+[os]
+disabled = false
+format = " [$symbol](fg:cyan)"
+
+[os.symbols]
+Arch = ""
+Linux = "󰌽"
+
+[username]
+show_always = true
+format = " [$user](fg:purple)"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = " [ $path](fg:blue)"
+
+# Git
+
+[git_branch]
+symbol = " "
+format = " [$symbol$branch](fg:green)"
+
+[git_status]
+format = "([$all_status$ahead_behind](fg:pink))"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+modified = "● "
+staged = "✔ "
+untracked = "… "
+deleted = "✖ "
+
+# Languages
+
+[python]
+symbol = " "
+format = " [$symbol$version(\\($virtualenv\\))](fg:yellow)"
+detect_extensions = ["py"]
+detect_files = ["requirements.txt", "pyproject.toml"]
+
+[nodejs]
+symbol = " "
+format = " [$symbol$version](fg:green)"
+
+[golang]
+symbol = " "
+format = " [$symbol$version](fg:cyan)"
+
+[dart]
+symbol = " "
+format = " [$symbol$version](fg:blue)"
+
+[java]
+symbol = " "
+format = " [$symbol$version](fg:yellow)"
+
+[gradle]
+symbol = " "
+format = " [$symbol$version](fg:green)"
+detect_files = ["gradlew", "settings.gradle"]
+
+[ruby]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:pink"
+
+[rust]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:orange"
+
+[swift]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:yellow"
+
+[c]
+symbol = "ℂ "
+format = " [$symbol]($style)"
+style = "bold fg:cyan"
+
+[cpp]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:cyan"
+
+[kotlin]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:purple"
+
+[ocaml]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:yellow"
+
+[perl]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:cyan"
+
+[php]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:purple"
+
+[julia]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:cyan"
+
+[crystal]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:cyan"
+
+[dotnet]
+symbol = ".NET "
+format = " [$symbol]($style)"
+style = "bold fg:blue"
+
+[terraform]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:purple"
+
+[kubernetes]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:blue"
+
+[zig]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:yellow"
+
+[nim]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:yellow"
+
+[haskell]
+symbol = "λ "
+format = " [$symbol]($style)"
+style = "bold fg:purple"
+
+[elixir]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:purple"
+
+[erlang]
+symbol = " "
+format = " [$symbol]($style)"
+style = "bold fg:red"
+
+# Dev Tools
+
+[docker_context]
+symbol = " "
+format = " [$symbol$context](fg:blue)"
+
+# System
+
+[cmd_duration]
+min_time = 200
+format = " [ $duration](fg:yellow)"
+
+[status]
+disabled = false
+symbol = "✖ "
+format = " [$symbol$status](fg:pink)"
+
+# Prompt
+[character]
+success_symbol = "[❯](fg:purple)"
+error_symbol = "[❯](fg:pink)"
+vimcmd_symbol = "[❮](fg:blue)"

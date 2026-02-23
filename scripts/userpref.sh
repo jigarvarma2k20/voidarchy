@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+source ./utils.sh
 
 BACKUP_DIR="$HOME/.cache/voidarchy/backups/"
 
@@ -11,9 +13,6 @@ $XDG_CONFIG_HOME/kitty/user.conf
 
 ACTION="$1"
 
-print_block() {
-  echo "== $1 =="
-}
 
 if [ "$ACTION" != "b" ] && [ "$ACTION" != "r" ]; then
   print_block "USAGE"

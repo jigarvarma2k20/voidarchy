@@ -1,14 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+source ./utils.sh
 
 WALL_DIR="$HOME/Pictures/wallpapers"
-REPO_URL="https://github.com/whoisYoges/lwalpapers.git"
+REPO_URL="https://github.com/michaelScopic/Wallpapers.git"
 DEFAULT_WALL="$XDG_CONFIG_HOME/voidarchy/wall.jpg"
-
-
-print_block() {
-  echo "== $1 =="
-}
-
 
 print_block "Wallpaper Setup"
 

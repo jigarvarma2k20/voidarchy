@@ -1,9 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-print_block() {
-  echo "== $1 =="
-}
-
+source ./utils.sh
 # user services to enable
 USER_SERVICES="
 pipewire
