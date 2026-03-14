@@ -53,7 +53,7 @@ run_rofi() {
 
 # Execute Command
 run_cmd() {
-	selected="$(confirm_exit $1) "
+	selected="$(confirm_exit $1 | xargs)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
 			systemctl poweroff
@@ -73,6 +73,7 @@ run_cmd() {
 
 # Actions
 chosen="$(run_rofi)"
+
 case ${chosen} in
     $shutdown)
 		run_cmd --shutdown
@@ -81,9 +82,11 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
+		if command -v hyprlock >/dev/null; then
+			hyprlock
+		elif command -v betterlockscreen >/dev/null; then
 			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
+		elif command -v i3lock >/dev/null; then
 			i3lock
 		fi
         ;;
