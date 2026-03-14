@@ -7,13 +7,13 @@
 
 
 window#waybar {
-  background: rgba(26, 27, 38, 0.35);
+  background: rgba(26, 27, 38, 0.45);
   color: #e6e6e6;
   border-radius: 12px;
   margin: 8px 12px 0 12px;
   padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
-
 
 #workspaces,
 #cpu,
