@@ -16,7 +16,7 @@ BEGIN {
 
 # Ignore empty,single-# comments, whitespace-only lines
 /^[[:space:]]*$/ { next }
-/^[[:space:]]*#(?!#)/ { next }
+/^[[:space:]]*#[^#]/ { next }
 
 
 function print_heading(title) {

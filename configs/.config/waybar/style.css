@@ -1,305 +1,163 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family:
-    Lexend,
-    JetBrainsMono Nerd Font,
-    Iosevka Nerd Font;
-  font-size: 10px;
-  margin-top: 1px;
-  margin-bottom: 1px;
+  font-family: Lexend, JetBrainsMono Nerd Font, Iosevka Nerd Font;
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
 }
+
 
 window#waybar {
-  background-color: rgba(26, 27, 38, 0.4);
-  color: #ffffff;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  background: rgba(26, 27, 38, 0.35);
+  color: #e6e6e6;
+  border-radius: 12px;
+  margin: 8px 12px 0 12px;
+  padding: 0 14px;
 }
 
-window#waybar.hidden {
-  opacity: 0.1;
-}
 
-#window {
-  color: #64727d;
-}
-
-#window,
-#temperature,
+#workspaces,
 #cpu,
 #memory,
-#custom-swaync,
+#temperature,
+#pulseaudio,
+#backlight,
+#battery,
+#clock,
 #tray,
 #custom-lock,
-#workspaces,
+#custom-power-menu,
 #custom-keybindings,
-#custom-power-menu {
-  color: #8a909e;
-  border-radius: 6px;
-  padding: 0px 10px;
-  background-color: #252733;
-  border-radius: 8px;
-  margin-left: 4px;
-  margin-right: 4px;
-
+#custom-swaync {
+  background: transparent;
+  padding: 0 3px;
+  margin: 0 2px;
 }
+
+
+#workspaces {
+  padding: 0 6px;
+}
+
+#workspaces button {
+  color: #6c7086;
+  padding: 0 6px;
+  margin: 0 2px;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.18s ease;
+}
+
+
+#workspaces button.active {
+  color: #ffffff;
+  background: rgba(120, 130, 200, 0.18);
+}
+
+
+#workspaces button:hover {
+  color: #cdd6f4;
+  background: rgba(120, 130, 200, 0.12);
+}
+
+
+#workspaces button.urgent {
+  color: #fb958b;
+}
+
 
 #cpu {
   color: #fb958b;
+  padding-left: 12px;
 }
 
 #memory {
   color: #a1c999;
 }
 
-#workspaces button {
-  color: #7a95c9;
-  box-shadow: inset 0 -3px transparent;
-
-  padding-right: 1px;
-  padding-left: 2px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0.1em;
-  margin-right: 0em;
-  /* transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68); */
-}
-
-#workspaces button.active {
-  color: #ecd3a0;
-  padding-left: 1px;
-  padding-right: 1px;
-  margin-left: 0em;
-  margin-right: 0em;
-  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
-}
-
-#cpu,
-#temperature,
-#memory {
-  background-color: #252733;
-  padding-left: 8px;
-  padding-right: 8px;
-
-}
-
-#temperature {
-  border-radius: 8px 0px 0px 8px;
-  margin-right: 0px;
-}
-
-#memory {
-  border-radius: 0px 8px 8px 0px;
-  margin-left: 0px;
-}
-
 #temperature {
   color: #ecd3a0;
-  padding-right: 2px;
-  padding-left: 4px;
 }
 
-/* #mpris-group
- {
-  background-color: #252733;
-  border-radius: 8px;
-  padding-left: 6px;
-  padding-right: 4px;
-} */
-
-#clock-group {
-  background-color: #252733;
-  color: #8a909e;
-  border-radius: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#util-toggle-group {
-  background-color: #252733;
-  color: #ecd3a0;
-  border-radius: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#power-profiles-daemon {
-  padding-left: 5px;
-}
-
-#backlight.icon {
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-#backlight-group {
-  background-color: #252733;
-  color: #ecd3a0;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
-#battery-group {
-  background-color: #252733;
-  color: #8fbcbb;
-  border-radius: 0px 8px 8px 0px;
-  padding-left: 2px;
-  padding-right: 8px;
-}
-
-#audio {
-  background-color: #252733;
-  border-radius: 8px 0px 0px 8px;
-}
 
 #pulseaudio {
   color: #81a1c1;
-  padding-left: 6px;
-  border-radius: 8px 0px 0px 8px;
 }
 
 #pulseaudio.muted {
   color: #fb958b;
-
 }
 
-#pulseaudio.microphone {
-  padding: 0px;
-}
-
-#pulseaudio.microphone.source-muted {
-  color: #fb958b;
-}
 
 #backlight {
-  background-color: #252733;
   color: #ecd3a0;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 3px;
-  padding-bottom: 3px;
 }
 
-#battery.icon.critical,
-#battery.icon.warning,
-#battery.icon.full,
-#battery.icon.plugged {
+
+#battery {
   color: #8fbcbb;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-#battery.text.critical,
-#battery.text.warning,
-#battery.text.full,
-#battery.text.plugged {
-  color: #8fbcbb;
-  padding-left: 0px;
-  padding-right: 4px;
-}
-
-#battery.icon.charging {
-  padding-right: 5px;
-  padding-left: 3px;
-}
-
-#battery.text.charging {
-  padding-right: 4px;
-  padding-left: 2px;
-}
-
-#battery.icon.full,
-#battery.icon.plugged {
-  padding-right: 4px;
-}
-
-#battery.text.full,
-#battery.text.plugged {
-  padding-right: 4px;
-  padding-left: 0px;
-}
-
-@keyframes blink {
-  to {
-    background-color: rgba(30, 34, 42, 0.5);
-    color: #abb2bf;
-  }
 }
 
 #battery.warning {
   color: #ecd3a0;
 }
 
-#battery.critical:not(.charging) {
+#battery.critical {
   color: #fb958b;
 }
 
+
+#clock {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+
+#tray {
+  padding: 0 2px;
+  margin: 0 2px;
+}
+
+#tray>* {
+  margin: 0 1px;
+}
+
+#tray>.passive,
+#tray>.active,
+#tray>.needs-attention {
+  -gtk-icon-transform: scale(0.8);
+}
+
+
 #custom-lock {
   color: #ecd3a0;
-  padding: 0 15px 0 15px;
-  margin-left: 7px;
-
-
 }
+
 
 #custom-power-menu {
   color: #e78284;
-  margin-right: 12px;
-  border-radius: 8px;
-  padding: 0 6px 0 6.8px;
-
-
+  margin-left: 2px;
+  padding-right: 12px;
 }
 
+#idle_inhibitor {
+  margin-right: 5px;
+}
+
+#power-profiles-daemon {
+  margin-left: 6px;
+}
+
+#custom-swaync {
+  margin-left: 6px;
+}
+
+
 tooltip {
-  border-radius: 15px;
-  padding: 15px;
-  background-color: #1f232b;
+  border-radius: 10px;
+  background: #1f232b;
+  padding: 8px;
 }
 
 tooltip label {
-  font-family: Iosevka Nerd Font;
-  padding: 5px;
-}
-
-label:focus {
-  background-color: #1f232b;
-}
-
-
-#tray>.passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray>.needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
-}
-
-#custom-separator {
-  padding-left: 1px;
-  padding-right: 1px;
-  font-size: 14px;
-  color: #8a909e;
-}
-
-#custom-empty-space {
-  padding-left: 2px;
-  padding-right: 2px;
-}
-#custom-keybindings,
-#custom-swaync
- {
-  color: #8fbcbb;
+  padding: 2px;
 }

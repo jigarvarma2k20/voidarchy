@@ -14,6 +14,8 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.zsh_history
 setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -26,7 +28,6 @@ bindkey '^[[B' history-substring-search-down
 # Starship Configuration
 eval "$(starship init zsh)"
 
-export EDITOR=kate
 
 ######## Load Local Overrides ##########
 
