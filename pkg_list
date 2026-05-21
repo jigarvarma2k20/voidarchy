@@ -5,6 +5,9 @@ waybar
 rofi
 hypridle
 hyprlock
+hyprcursor
+hyprsunset
+aquamarine
 
 # Terminal & Shell Enhancements
 foot
@@ -35,6 +38,7 @@ ttf-jetbrains-mono-nerd
 sddm
 polkit-gnome
 
+
 # XDG / Desktop Portals
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
@@ -48,6 +52,11 @@ parallel
 jq
 imagemagick
 libnotify
+
+# GTK/GUI Essentials
+lxappearance
+gtk3
+gtk4
 
 # Networking / Bluetooth
 networkmanager

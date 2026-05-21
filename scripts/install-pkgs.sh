@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
 source ./utils.sh
+
+# Ensure essential build dependencies are present
+ensure_build_deps() {
+  print_block "ENSURING BASE BUILD DEPS (base-devel, git, make, gcc)"
+  sudo pacman -Sy --needed --noconfirm base-devel git make gcc
+}
 
 # resolve script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -14,7 +21,7 @@ YAY_DIR="/tmp/yay"
 install_pacman() {
   if [ -s "$PKG_LIST" ]; then
     print_block "INSTALLING OFFICIAL PACKAGES"
-    grep -Ev '^\s*#|^\s*$' "$PKG_LIST" | sudo pacman -Sdd --needed --noconfirm -
+    grep -Ev '^\s*#|^\s*$' "$PKG_LIST" | sudo pacman -S --noconfirm -
   else
     echo "== SKIP == pkg_list missing or empty"
   fi
@@ -37,7 +44,7 @@ install_aur() {
   if [ -s "$AUR_LIST" ]; then
     print_block "INSTALLING AUR PACKAGES"
     install_yay
-    grep -Ev '^\s*#|^\s*$' "$AUR_LIST" | yay -Sdd --needed --noconfirm -
+    grep -Ev '^\s*#|^\s*$' "$AUR_LIST" | yay -S --noconfirm -
   else
     echo "== SKIP == aur_list missing or empty"
   fi
@@ -48,6 +55,8 @@ update_mirrors() {
   sudo pacman -Sy
 }
 
+
+ensure_build_deps
 print_block "PACKAGE INSTALL START"
 update_mirrors
 install_pacman
